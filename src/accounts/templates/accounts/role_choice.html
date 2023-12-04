@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+    <section class="pb-5 h-100">
+        <div class="row h-75">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title"> Lecteur</p>
+                        <p class="card-text">Acces  Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati nam in quia ducimus, sapiente magni? aux differents articles sur le site</p>
+                    </div>  
+                    <div class="card-footer">
+                        <a href="{% url 'accounts:register' 'LECTEUR'%}" class="btn w-100 btn-primary">Je suis un lecteur</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title"> Auteur</p>
+                        <p class="card-text">Acces  Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati nam in quia ducimus, sapiente magni? aux differents articles sur le site</p>
+                    </div>  
+                    <div class="card-footer">
+                        <a href="{% url 'accounts:register' 'AUTEUR'%}" class="btn w-100 btn-primary">Je suis un auteur</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

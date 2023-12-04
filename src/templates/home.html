@@ -1,0 +1,23 @@
+{% extends "base.html"  %}
+
+{% block content %}
+    <section">
+        <div class="row bg-secondary mb-5 py-5">
+            <div class="col-8">
+                <h1>Mon titre principal</h1>
+                <p class="my-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti cupiditate provident molestias voluptatum commodi rerum quaerat dolore excepturi ex autem, recusandae illum minima laudantium, delectus, maxime facere accusamus? Corporis cum natus ipsam, quo iusto quisquam excepturi qui rerum. Ratione repellat laborum at beatae. Sit error impedit, officiis similique consequatur quaerat nam nihil odit voluptate omnis quisquam doloribus id magnam. Hic, alias et voluptatibus sit omnis, nostrum at minus laborum cum, sapiente aperiam vitae animi quaerat praesentium assumenda id officiis quis.</p>
+                <a href="{% url 'accounts:role_choice' %}" class="btn btn-primary">Demarrer</a>
+                <a href="{% url 'blog_app:article' %}" class="btn btn-outline-primary">Voir les articles</a>
+            </div>
+        </div>
+        <div class="row bg-secondary">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae iste rem, aliquid totam atque optio consequatur commodi quibusdam repudiandae placeat ex eaque fugiat, sint vero doloribus esse? Debitis magni ut modi laudantium aperiam, minus suscipit, temporibus magnam odio repellat distinctio officia voluptas necessitatibus fuga quisquam sint eligendi consequatur commodi. Velit, ut aspernatur. Minus, eligendi dicta? Aliquam excepturi quidem recusandae minus molestias distinctio perferendis expedita eum delectus harum, nulla qui rem ducimus. Sunt voluptatibus hic nam! Porro quaerat repellat expedita nam aperiam veniam soluta! Praesentium id voluptate illum aspernatur sapiente. Necessitatibus quia incidunt rerum quam sapiente. Quos sapiente ad obcaecati, perferendis deserunt magnam enim nostrum ullam voluptates nesciunt unde delectus nulla rerum ipsa iure suscipit, exercitationem distinctio explicabo veniam quia nam incidunt eos. Alias dolores placeat voluptates molestias incidunt sapiente, id obcaecati? Illum earum beatae corporis? Repellendus nulla alias nihil fugiat voluptatibus officia quaerat quasi esse unde dolore eligendi nesciunt, excepturi ipsam iure ab laboriosam quisquam ad itaque fuga! Laboriosam deserunt quae sed mollitia numquam perferendis ut aspernatur error possimus quisquam, beatae quo. Reprehenderit, facere quidem.</div>
+        <div class="row my-5">
+            <h3>Articles recents</h3>
+            <div class="row d-flex justify-content-center">
+                {% for article in articles %}
+                    {% include "blog/article_card.html" %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock content %}

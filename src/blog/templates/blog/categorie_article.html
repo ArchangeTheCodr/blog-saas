@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section>
+    <ul>
+        <span>Tous les categories</span>
+
+        {% for categorie in categories  %}
+            <li> 
+                {{ categorie.nom }}  
+                {{ categorie.couverture }}
+                {{ categorie.description }}  
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock content %}

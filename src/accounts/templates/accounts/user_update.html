@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>Modifier le compte</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<section>
+    <div class="row d-flex justify-content-center">
+        
+        <div class="col-4">
+            <h1>Mis a jour du compte</h1>
+            <form action="" method="post" class="mt-3">
+                {% csrf_token %}
+                <div class="form-floating">
+                    {{ form.as_div }}
+                </div>
+        
+                <input type="submit" class="w-100 mb-5 h-600 btn-lg btn-primary mt-4" value="Enregistre">
+            </form>
+            <p><a href="{% url 'accounts:login' %}">abandonner</a></p>
+        </div>
+    </div>
+    
+</section>

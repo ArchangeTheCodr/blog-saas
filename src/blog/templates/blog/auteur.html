@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section>
+        <div class="row">
+            <div class="col-4">
+                <p>Filtre :</p> 
+                <form action="" method="get">
+                    {{ myFilter.form }}
+                    <input type="submit" class="btn btn-primary" value="Rechercher">
+                </form>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="row d-flex justify-content-center">
+            {% for auteur in page_actuel %}
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <p>
+                                <strong>
+                                    {{auteur}}
+                                </strong>
+                            </p>
+                        
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                <img src="{{ auteur.photos.url }}" alt="photos {{ auteur }} " class="img-fluid">
+                            </p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="{% url 'blog_app:detail_auteur' auteur.pk%}" class="btn btn-primary">Voir le profil</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {% include "blog/pagination.html" %}
+    </section>
+{% endblock content %}

@@ -1,0 +1,10 @@
+body{
+    background-color: rgb(173, 171, 171);
+}
+
+.container{
+    box-shadow: black;
+}
+.bgBlue{
+    border:  1px solid cornflowerblue;
+}

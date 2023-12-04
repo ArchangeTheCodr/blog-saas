@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %} 
+    <section class="border-bottom pb-5 container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-4">
+                <img src="{{ auteur.photos.url}}" alt="photos {{ auteur }}" class="img-fluid">
+            </div>
+            <div class="col-6">
+                <div class="card-body">
+                    <h1> {{auteur.nom}} {{auteur.prenom}} || {{ auteur.auteurname }} </h1>
+                    <h3>  {{ auteur.biographie }} </h3>
+                    <h6> 
+                        <p>
+                            Role : {{ auteur.role }}
+                        </p>
+                        <p>
+                            Contact : {{ auteur.email }}
+                        </p>
+                        <p>
+                            Date d'inscription : {{ auteur.date_inscription }}
+                        </p>
+                    </h6>
+                </div>
+            </div>
+        </div>    
+    </section>
+
+    <section class="pt-3">
+        <h2> Tous les articles de {{auteur.nom}} {{auteur.prenom}}</h2>
+        <section>
+            <div class="row">
+                <div class="col-4">
+                    <p>Filtre :</p> 
+                    <form action="" method="get">
+                        {{ myFilter.form }}
+                        <input type="submit" class="btn btn-primary" value="Rechercher">
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="row d-flex justify-content-center">
+                {% for article in page_actuel %}
+                    {% include "blog/article_card.html" %}
+                {% endfor %}
+            </div>
+        </section>
+        {% include "blog/pagination.html" %}
+        
+    </section>
+{% endblock content %}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-8">
+            <section>
+                <h1>{{ article.titre }}</h1>
+                <h5>
+                    Publie le : {{article.date_publication }}, par :
+                    {% for auteur in article.auteur.all %}
+                        <a href="{% url  'blog_app:detail_auteur' auteur.id %}" class="link">{{ auteur }}</a>
+                    {% endfor %}
+                </h5>
+        
+                <img src="{{article.image_couverture.url}}" alt="banniere" class="mt-3 mb-5 img-fluid">
+                
+                <article>
+                    {{ article.contenu }}
+                </article>    
+            </section>
+        </div>
+        <div class="col-4">
+            <h6>RECOMMANDATIONS</h6>
+            <aside class=" container-fluid bg-secondary pt-3">
+                
+                {% for article in recommandations %}
+                    <div class="card mb-2">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="{{article.image_couverture.url}}" alt="image {{ article.titre }}" class="img-fluid">
+                            </div>
+                            <div class="col-7">
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        <strong>{{ article.titre }}</strong>
+                                    </p>
+                                    
+                                </div>
+                                <div class="card-footer">
+                                    <a href="{% url 'blog_app:detail_article' article.id %}" class="btn w-100 btn-outline-primary">Lire l'article</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </aside>
+        </div>
+    </div>
+{% endblock content %}
