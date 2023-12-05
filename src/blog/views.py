@@ -40,7 +40,7 @@ def detail_article(request, id):
     recommandations = recommandations.exclude(pk=id)[:12]
     return render(request, 'blog/detail_article.html', {'article' : article, 'recommandations' : recommandations})
 
-@permission_required('blog_app.add_article')
+@permission_required('blog.add_article')
 def create_article(request):
     if request.method == 'POST':
         form = CreateArticleForm(request.POST, request.FILES)
@@ -72,7 +72,7 @@ def create_article(request):
 
     return render(request, 'blog/create_article.html', {'form' : form})
 
-@permission_required('blog_app.change_article')
+@permission_required('blog.change_article')
 def update_article(request, key):
     article = Article.objects.get(pk=key)
     if request.method == 'POST':
@@ -85,7 +85,7 @@ def update_article(request, key):
         
     return render(request, 'blog/create_article.html', {'form' : form})
 
-@permission_required('blog_app.delete_article')
+@permission_required('blog.delete_article')
 def delete_article(request, key):
     article = Article.objects.get(pk = key)
     article.delete()

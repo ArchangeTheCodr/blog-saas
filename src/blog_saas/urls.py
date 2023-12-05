@@ -4,7 +4,7 @@ from django.urls import path, include
 from . import views
 from blog_saas import settings
 
-# app_name = 'blog_saas'
+app_name = 'blog_saas'
 
 urlpatterns = [
     path('admin/', admin.site.urls),

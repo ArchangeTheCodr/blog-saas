@@ -45,7 +45,6 @@ def register_user(request, rl):
         else: 
             form = LecteurCreationForm(request.POST, request.FILES)
             group = Group.objects.get(name__iexact='lecteur')
-        print(group)
         if form.is_valid():
             form.save()
             usr = request.POST.get('username')

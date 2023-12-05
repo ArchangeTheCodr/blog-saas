@@ -1,16 +1,35 @@
-<h1>Connexion</h1>
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+        <title>Blog saas | Connection</title>
+    </head>
+    <body>
+        
 
-<section>
-    {% for message in messages %}
-        <p>{{ message }}</p>
-    {% endfor %}
-</section>
+        <section>
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </section>
 
-<section>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.as_div }}
-
-        <input type="submit" value="Se connecter">
-    </form>
-</section>
+        <div class="row">
+            <div class="col-3 mx-5 px-5 mt-5 pt-5">
+                <section>
+                    <h1>Connexion</h1>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {{ form.as_div }}
+        
+                        <input type="submit" value="Se connecter" class="btn btn-primary mt-2">
+                    </form>
+                    <p>Pas encore de compte ? <a href="{% url 'accounts:role_choice' %}" class="nav-link">inscrivez vous !</a></p>
+                </section>
+            </div>
+        </div>
+    </body>
+</html>

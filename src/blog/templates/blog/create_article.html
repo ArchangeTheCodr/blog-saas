@@ -8,12 +8,22 @@
     <title>Creer l'article</title>
 </head>
 <body>
-    <section>
-        <form action="" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.as_div }}
-            <input type="submit" value="Creer">
-        </form>
-    </section>
+    <div class="container">
+
+        <section>
+            <div class="row">
+                <div class="col-4">
+
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_div }}
+                        <input type="submit" value="Creer" class="form-control">
+                     </form>
+                    <p><a href="{% url 'homepage' %}" class="nav-link">Annuler</a></p>
+                </div>
+            </div>
+        </section>
+
+    </div>
 </body>
 </html>
