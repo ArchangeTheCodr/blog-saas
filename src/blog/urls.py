@@ -10,4 +10,5 @@ urlpatterns = [
     path('articles/delete/<int:key>/', views.delete_article, name='delete_article'),
     path('auteurs/', views.auteur, name='auteur'),
     path('auteurs/<int:id>/', views.detail_auteur, name='detail_auteur'),
+    path('categories/', views.categorie_article, name='categorie_article'),
 ]

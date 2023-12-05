@@ -2,16 +2,17 @@
 
 {% block content %}
   <section>
-    <ul>
-        <span>Tous les categories</span>
-
-        {% for categorie in categories  %}
-            <li> 
-                {{ categorie.nom }}  
-                {{ categorie.couverture }}
-                {{ categorie.description }}  
-            </li>
-        {% endfor %}
-    </ul>
+        <h1>Tous les categories</h1>
+       <div class="container">
+            <div class="row d-flex"></div>
+                {% for categorie in categories  %}
+                    <div class="col-3 text-center border shadow my-3">
+                        <p>{{ categorie.nom }}</p>
+                        <img src="{{ categorie.couverture.url }}" alt="image de {{ categorie.nom }}" class="img-fluid px-2">
+                        <p>{{ categorie.description }} </p>
+                    </div>
+                {% endfor %}
+            </div>
+       </div>
 </section>
 {% endblock content %}

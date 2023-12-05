@@ -133,3 +133,6 @@ def detail_auteur(request, id):
     page_actuel = paginator.get_page(num_page)
     context = {'page_actuel' : page_actuel, 'auteur' : auteur, 'myFilter' : myFilter}
     return render(request, 'blog/detail_auteur.html', context)
+
+def categorie_article(request):
+    return render(request, 'blog/categorie_article.html', {'categories' : Article_category.objects.all()})
